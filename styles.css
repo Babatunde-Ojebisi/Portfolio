@@ -51,7 +51,7 @@ section {
     width: 100%;
 }
 
-/* --- Glassmorphism Card Style --- */
+/* --- Card Style --- */
 .card {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
