@@ -56,9 +56,9 @@ function App() {
       
       <main className="main-content">
         <section id="about"><About /></section>
-        <section id="career"><Skills /></section>
         <section id="projects"><Projects /></section>
         <section id="blogs"><Interests /></section>
+        <section id="career"><Skills /></section>
         <section id="certifications"><Certifications /></section>
         <section id="contact"><Contact /></section>
       </main>
