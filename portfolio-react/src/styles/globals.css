@@ -1,0 +1,286 @@
+/* --- Google Font & CSS Reset --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #121212;
+    --primary-text: #E0E0E0;
+    --gold-accent: #D4AF37;
+    --card-bg: rgba(30, 30, 30, 0.5);
+    --card-border: rgba(212, 175, 55, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.37);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- General & Body Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    color: var(--gold-accent);
+    font-weight: 600;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+/* --- Main Container Layout --- */
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* --- Card Style --- */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--card-border);
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--gold-accent);
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero .title {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--primary-text);
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill-badge {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    background-color: var(--gold-accent);
+    color: var(--bg-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- Certifications Section --- */
+.cert-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cert-item {
+    background: var(--card-bg);
+    border-left: 4px solid var(--gold-accent);
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s ease;
+}
+
+.cert-item:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-card .tools span {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gold-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- Interests Section --- */
+#interests ul {
+    list-style-type: '✨';
+    padding-left: 1.5rem;
+}
+
+#interests ul li {
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Button Styles --- */
+.cv-download {
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.btn {
+    background-color: var(--gold-accent);
+    color: #000;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* --- Contact Form --- */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--primary-text);
+    font-family: 'Poppins', sans-serif;
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: #aaa;
+}
+
+#contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+}
+
+#contact button {
+    align-self: flex-start;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--primary-text);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--gold-accent);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .title {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .social-links a {
+        margin: 0 0.5rem;
+    }
+}
