@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills() {
   const skills = [
-    "AWS", "Python", "HTML5/CSS3", "JavaScript", 
+    "AWS", "Python", "HTML5/CSS3", "JavaScript", "WordPress",
     "SQL", "Tableau", "Microsoft Power BI", "Git/GitHub"
   ];
 
