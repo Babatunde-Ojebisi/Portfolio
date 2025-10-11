@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    --bg-color: #121212;
-    --primary-text: #E0E0E0;
-    --gold-accent: #D4AF37;
-    --card-bg: rgba(30, 30, 30, 0.5);
-    --card-border: rgba(212, 175, 55, 0.2);
-    --shadow-color: rgba(0, 0, 0, 0.37);
+    --bg-color: #0a192f;
+    --secondary-bg: #112240;
+    --primary-text: #ccd6f6;
+    --secondary-text: #8892b0;
+    --accent: #64ffda;
+    --card-bg: rgba(17, 34, 64, 0.7);
+    --card-border: rgba(100, 255, 218, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --sidebar-width: 350px;
 }
 
 * {
@@ -22,265 +25,295 @@ body {
     background-color: var(--bg-color);
     color: var(--primary-text);
     line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 1rem;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3 {
-    color: var(--gold-accent);
+    color: var(--accent);
     font-weight: 600;
 }
 
 h2 {
     margin-bottom: 1.5rem;
-    text-align: center;
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
+    padding-top: 1rem;
 }
 
-/* --- Main Container Layout --- */
-.container {
-    max-width: 900px;
+/* --- Portfolio Container Layout --- */
+.portfolio-container {
+    display: flex;
+    min-height: 100vh;
     width: 100%;
 }
 
-/* --- Card Style --- */
-.card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid var(--card-border);
-    padding: 2rem;
-    box-shadow: 0 8px 32px 0 var(--shadow-color);
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--card-border);
+    padding: 2rem 2rem calc(2rem + 2px);
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Hero Section --- */
-.hero {
-    text-align: center;
-    margin-bottom: 3rem;
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid var(--gold-accent);
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+.profile-image {
     margin-bottom: 0.5rem;
-}
-
-.hero .title {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--primary-text);
-}
-
-/* --- Skills Section --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-}
-
-.skill-badge {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 0.75rem;
     text-align: center;
-    font-weight: 400;
+}
+
+.profile-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    filter: grayscale(20%);
     transition: all 0.3s ease;
 }
 
-.skill-badge:hover {
-    background-color: var(--gold-accent);
-    color: var(--bg-color);
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+.profile-image img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
-/* --- Certifications Section --- */
-.cert-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.cert-item {
-    background: var(--card-bg);
-    border-left: 4px solid var(--gold-accent);
-    padding: 1rem 1.5rem;
-    margin-bottom: 0.75rem;
-    border-radius: 0 8px 8px 0;
-    transition: background-color 0.3s ease;
-}
-
-.cert-item:hover {
-    background-color: rgba(212, 175, 55, 0.1);
-}
-
-/* --- Projects Section --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.project-card h3 {
-    margin-bottom: 0.75rem;
-}
-
-.project-card p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.project-card .tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.project-card .tools span {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--gold-accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* --- Interests Section --- */
-#interests ul {
-    list-style-type: '✨';
-    padding-left: 1.5rem;
-}
-
-#interests ul li {
-    padding-left: 0.5rem;
+.profile-info {
     margin-bottom: 0.5rem;
-}
-
-/* --- Button Styles --- */
-.cv-download {
     text-align: center;
-    margin: 2.5rem 0;
 }
 
-.btn {
-    background-color: var(--gold-accent);
-    color: #000;
-    padding: 0.75rem 2rem;
-    border-radius: 8px;
+.profile-info h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.tagline {
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.sub-tagline {
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.sidebar-nav {
+    margin: 0.5rem 0;
+    flex-grow: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.2rem;
+}
+
+.sidebar-nav a {
+    color: var(--primary-text);
     text-decoration: none;
-    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.4rem 0.6rem;
+    position: relative;
+    border-radius: 4px;
+    background-color: transparent;
+    border-left: 2px solid transparent;
+}
+
+.sidebar-nav a:hover {
+    color: var(--accent);
+    background-color: rgba(100, 255, 218, 0.05);
+    border-left: 2px solid var(--accent);
+}
+
+.sidebar-nav a::before {
+    content: "▹";
+    color: var(--accent);
+    position: absolute;
+    left: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover::before {
+    opacity: 1;
+}
+
+/* --- Social Icons --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.social-icons a {
+    color: var(--primary-text);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.social-icons a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* --- Main Content Styles --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 2rem 3rem;
+    width: calc(100% - var(--sidebar-width));
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* --- Section Styles --- */
+section {
+    max-width: 800px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
     display: inline-block;
-    border: none;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+/* --- Card Style Updates --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+/* --- CV Download Button --- */
+.cv-download {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.cv-download a {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.cv-download a:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+/* --- Copyright --- */
+.copyright {
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 0.75rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    padding-top: 0.25rem;
+}
+
+/* --- Contact Form Updates --- */
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--card-border);
+    color: var(--primary-text);
+    padding: 0.8rem;
+}
+
+.contact-form button {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+.contact-form button:hover {
+    background-color: rgba(100, 255, 218, 0.1);
 }
 
-/* --- Contact Form --- */
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: 1px solid var(--card-border);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--primary-text);
-    font-family: 'Poppins', sans-serif;
-}
-
-#contact input::placeholder, #contact textarea::placeholder {
-    color: #aaa;
-}
-
-#contact input:focus, #contact textarea:focus {
-    outline: none;
-    border-color: var(--gold-accent);
-}
-
-#contact button {
-    align-self: flex-start;
-}
-
-/* --- Footer --- */
+/* --- Footer Updates --- */
 footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--card-border);
-}
-
-.social-links {
-    margin-bottom: 1rem;
-}
-
-.social-links a {
-    color: var(--primary-text);
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 300;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--gold-accent);
-}
-
-footer p {
-    font-size: 0.9rem;
-    color: #888;
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    body {
-        padding: 1rem 0.5rem;
+    .portfolio-container {
+        flex-direction: column;
     }
     
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero .title {
-        font-size: 1rem;
-    }
-    
-    .card {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
         padding: 1.5rem;
     }
-
-    h2 {
-        margin-bottom: 1rem;
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
     }
-
-    .social-links a {
-        margin: 0 0.5rem;
+    
+    .sidebar-content {
+        height: auto;
     }
 }
