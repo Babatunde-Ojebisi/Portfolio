@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/globals.css';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
@@ -56,9 +57,10 @@ function App() {
       
       <main className="main-content">
         <section id="about"><About /></section>
+        <section id="experience"><Experience /></section>
         <section id="projects"><Projects /></section>
         <section id="blogs"><Interests /></section>
-        <section id="career"><Skills /></section>
+        <section id="skills"><Skills /></section>
         <section id="certifications"><Certifications /></section>
         <section id="contact"><Contact /></section>
       </main>
