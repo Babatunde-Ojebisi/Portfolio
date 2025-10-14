@@ -27,7 +27,7 @@ function App() {
               <li><a href="#about">About</a></li>
               <li><a href="#experience">Experience</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#blogs">Blogs</a></li>
+              <li><a href="#interests">Interests</a></li>
               <li><a href="#certifications">Certifications</a></li>
             </ul>
           </nav>
@@ -59,7 +59,7 @@ function App() {
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
         <section id="projects"><Projects /></section>
-        <section id="blogs"><Interests /></section>
+        <section id="interests"><Interests /></section>
         <section id="skills"><Skills /></section>
         <section id="certifications"><Certifications /></section>
         <section id="contact"><Contact /></section>

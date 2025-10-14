@@ -660,3 +660,43 @@ footer {
         height: auto;
     }
 }
+
+/* --- Interests Section --- */
+#interests ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#interests ul li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--secondary-text);
+    line-height: 1.4;
+}
+
+#interests ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    #interests ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #interests ul {
+        grid-template-columns: 1fr;
+    }
+}
