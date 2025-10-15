@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/globals.css';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -8,10 +8,30 @@ import Projects from './components/Projects';
 import Interests from './components/Interests';
 import CVDownload from './components/CVDownload';
 import Contact from './components/Contact';
+import MobileHeader from './components/MobileHeader';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   return (
     <div className="portfolio-container">
+      {isMobile && <MobileHeader />}
+      
       <aside className="sidebar">
         <div className="sidebar-content">
           <div className="profile-image">
