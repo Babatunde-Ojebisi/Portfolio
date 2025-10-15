@@ -10,14 +10,16 @@ function Interests() {
   ];
 
   return (
-    <section id="interests" className="card">
+    <>
       <h2>Interests</h2>
-      <ul>
-        {interests.map((interest, index) => (
-          <li key={index}>{interest}</li>
-        ))}
-      </ul>
-    </section>
+      <div className="card">
+        <ul>
+          {interests.map((interest, index) => (
+            <li key={index}>{interest}</li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
