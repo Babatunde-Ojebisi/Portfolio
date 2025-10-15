@@ -83,6 +83,12 @@ function App() {
         <section id="skills"><Skills /></section>
         <section id="certifications"><Certifications /></section>
         <section id="contact"><Contact /></section>
+        
+        {isMobile && (
+          <div className="mobile-footer">
+            © {new Date().getFullYear()} Ojebisi Babatunde. All rights reserved.
+          </div>
+        )}
       </main>
     </div>
   );
